@@ -1,0 +1,102 @@
+{% extends 'main/base.html' %}
+{% include 'main/nav-partial.html' %}
+{% include 'main/bootstrap-partial.html' %}
+{% block page_content %}
+
+    {% if not request.user.profile.is_activated %}
+        <div>Please create profile</div>
+    {% endif %}
+    <body class="index-body-background">
+    <div class="heading-wrapper">
+        <h3 class="heading-style">Search in Api Ninjas Cars</h3>
+    </div>
+
+    <form method="post" class="car-search-form" action="{% url 'index' %}">
+        {{ form.make }}
+        {{ form.model }}
+        {{ form.year }}
+        {{ form.transmission }}
+        {{ form.fuel_type }}
+        {{ form.cylinders }}
+            <button class="search-button-home">Search</button>
+        {% csrf_token %}
+    </form>
+
+    <div class="results">
+        {% for car in page_obj %}
+            <div class="car-wrapper">
+                <div class="car-line car-line-red">
+                    <div class="brand-color">
+                        Brand
+                    </div>
+                    <div class="brand-color">
+                        {{ car.make }}
+                    </div>
+                </div>
+                <div class="car-line">
+                    <div>
+                        Model
+                    </div>
+                    <div>
+                        {{ car.model }}
+                    </div>
+                </div>
+                <div class="car-line">
+                    <div>
+                        Year
+                    </div>
+                    <div>
+                        {{ car.year }}
+                    </div>
+                </div>
+                <div class="car-line">
+                    <div>
+                        Transmission
+                    </div>
+                    <div>
+                        {{ car.transmission }}
+                    </div>
+                </div>
+                <div class="car-line">
+                    <div>
+                        Fuel
+                    </div>
+                    <div>EMBLEM</div>
+                    <div>
+                        {{ car.fuel_type }}
+                    </div>
+                </div>
+                <div class="car-line">
+                    <div>
+                        Cylinders
+                    </div>
+                    <div>
+                        {{ car.cylinders }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% if page_obj %}
+        <div class="pagination-background car-line-red">
+            <div>
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}"
+                       class="custom-div-buttons pagination-buttons">
+                        <i class="fa-solid fa-backward pagination-arrow"></i>
+                    </a>
+                {% endif %}
+
+                <label class="custom-div-buttons">Page {{ page_obj.number }}
+                    of {{ page_obj.paginator.num_pages }}</label>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="custom-div-buttons">
+                        <i class="fa-solid fa-forward pagination-arrow"></i>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    </body>
+{% endblock %}

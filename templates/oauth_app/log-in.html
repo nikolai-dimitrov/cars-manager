@@ -1,0 +1,55 @@
+{% load socialaccount %}
+{% load static %}
+{% include 'main/bootstrap-partial.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sing In</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body class="login-body">
+
+<div class="oauth-forms">
+    <a href="{% url 'about' %}" class="heading-about">
+        <i class="fa fa-book" aria-hidden="true"></i>
+        About
+    </a>
+    <form method='post' action='{% url 'Log in' %}'>
+        <div class="data-input">
+            {{ form.username }}
+        </div>
+        <div class="data-input">
+            {{ form.password }}
+        </div>
+
+        {% csrf_token %}
+        <button type="submit" class="btn-my-class-blue-normal">Sign In</button>
+        <a href="{% url 'Register' %}" class="button">Sign Up</a>
+    </form>
+</div>
+<form class="auth-form" action="{% provider_login_url 'google' %}" method="post"
+      style="margin-top: 7px;margin-left: 120px">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary auth google"
+            style="--bs-btn-padding-y: 0.5rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 0.9rem;">
+        <i class="fa-brands fa-google"></i> Sign in with Google
+    </button>
+    {% if messages %}
+        <div class="error-message">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if form.errors %}
+        <div class="error-message">
+            {% for error in form.errors.values %}
+                {{ error }}
+            {% endfor %}
+        </div>
+    {% endif %}
+    </div>
+</form>
+</body>
+</html>

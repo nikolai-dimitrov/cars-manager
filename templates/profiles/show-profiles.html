@@ -1,0 +1,59 @@
+{% extends 'main/base.html' %}
+{% block page_content %}
+    <body>
+    <div class="custom-cards-wrapper-profile">
+        {% for profile in page_obj %}
+            <div class="custom-card-profile">
+            <img src="{{ profile.image.url }}" alt="Img" class="profile-ad-image-listing">
+            {% if not profile.is_banned %}
+                <div class="container custom-container-background-profile height-62 flex-start">
+            {% else %}
+                <div class="container custom-container-background-profile height-62 flex-start banned-profile-background">
+            {% endif %}
+        <p>First Name: {{ profile.first_name }}</p>
+        <p>Last Name: {{ profile.last_name }}</p>
+        <p>Age: {{ profile.age }}</p>
+        <p>Phone Number: {{ profile.phone_number }}</p>
+        <p>Total Ads: {{ profile.ad_set.count }}</p>
+        <p>Is Staff: {{ profile.user.is_staff }}</p>
+        <p>Username: {{ profile.user.username }}</p>
+        </div>
+        {#        {% if not profile.is_banned %}#}
+        {#            <a href="{% url 'profile ban' %}?profile_pk={{ profile.pk }}" class="profile-ban-button">Ban</a>#}
+        {#        {% else %}#}
+        {#            <a href="{% url 'profile ban' %}?profile_pk={{ profile.pk }}"#}
+        {#               class="profile-ban-button banned-profile-background">Unban</a>#}
+        {#        {% endif %}#}
+        {% if not profile.is_banned %}
+            <a href="{% url 'profile ban' profile.pk %}" class="profile-ban-button">Ban</a>
+        {% else %}
+            <a href="{% url 'profile ban' profile.pk %}"
+               class="profile-ban-button banned-profile-background">Unban</a>
+        {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    {% if page_obj %}
+        <div class="pagination-background">
+            <div>
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}"
+                       class="custom-div-buttons pagination-buttons">
+                        <i class="fa-solid fa-backward pagination-arrow"></i>
+                    </a>
+                {% endif %}
+
+                <label class="custom-div-buttons">Page {{ page_obj.number }}
+                    of {{ page_obj.paginator.num_pages }}</label>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="custom-div-buttons">
+                        <i class="fa-solid fa-forward pagination-arrow"></i>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    </body>
+{% endblock %}

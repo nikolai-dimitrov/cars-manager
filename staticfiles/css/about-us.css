@@ -1,0 +1,38 @@
+.about-us-div {
+    width: 30%;
+    height: 300px;
+    background-color: #0d489f;
+    margin: 100px 0px 0px 150px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 7px 12px -8px rgba(0, 0, 0, 1);
+}
+
+.git-a-link {
+    display: flex;
+    align-items: center;
+    /*line-height: 200px;*/
+    color: #ffffff;
+    margin-left: 175px;
+    font-size: xx-large;
+    text-decoration: none;
+    /*padding-top: 30px; E TOVA ZASHTO NE STAVA I NE PRAVI NISHTO...*/
+
+
+}
+.custom-h {
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.about-us-div-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 50px auto;
+}
+.about-us-buttons {
+    color: #ffffff;
+    text-decoration: none;
+}

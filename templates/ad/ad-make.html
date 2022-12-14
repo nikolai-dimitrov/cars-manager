@@ -1,0 +1,62 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load cloudinary %}
+{% block page_content %}
+    <body onload="unsetModels()">
+    <form method="post" action="{% url 'create ad' %}" class="ad-create-form" enctype="multipart/form-data">
+        <h1 class="ad-heading-color">Create your ad here</h1>
+        <label class="ad-labels-custom">Title</label>
+        {{ form.title }}
+        <label class="ad-labels-custom">Price</label>
+        {{ form.price }}
+        <label class="ad-labels-custom">Year of manufacture</label>
+        {{ form.year_of_manufacture }}
+        <label class="ad-labels-custom">Car brand</label>
+        {{ form.car }}
+        <label class="ad-labels-custom">Car model</label>
+        {{ form.model }}
+        <label class="ad-labels-custom">Transmission</label>
+        {{ form.transmission }}
+        <label class="ad-labels-custom">Body type</label>
+        {{ form.body_type }}
+        <label class="ad-labels-custom">City</label>
+        {{ form.city }}
+        <label class="ad-labels-custom">Horsepower</label>
+        {{ form.horse_power }}
+        <label class="ad-labels-custom">Mileage</label>
+        {{ form.mileage }}
+        <label class="ad-labels-custom">Fuel</label>
+        {{ form.fuel }}
+        <div class="images-wrapper">
+            <div>
+                <img src="https://res.cloudinary.com/dltjy2gzz/image/upload/v1669814122/cars/default/no-image-icon-15_p4ng0f.png"
+                     alt="image" onclick="imageOnClick(event)" id="_main"
+                     class="ad-image">
+                <div hidden="hidden">{{ form.image_main }}</div>
+                <img src="https://res.cloudinary.com/dltjy2gzz/image/upload/v1669814122/cars/default/no-image-icon-15_p4ng0f.png"
+                     alt="image" onclick="imageOnClick(event)" id="1" class="ad-image">
+                <div hidden="hidden">{{ form.image1 }}</div>
+            </div>
+            <div>
+                <img src="https://res.cloudinary.com/dltjy2gzz/image/upload/v1669814122/cars/default/no-image-icon-15_p4ng0f.png"
+                     alt="image" onclick="imageOnClick(event)" id="2" class="ad-image">
+                <div hidden="hidden">{{ form.image2 }}</div>
+                <img src="https://res.cloudinary.com/dltjy2gzz/image/upload/v1669814122/cars/default/no-image-icon-15_p4ng0f.png"
+                     alt="image" onclick="imageOnClick(event)" id="3" class="ad-image">
+                <div hidden="hidden">{{ form.image3 }}</div>
+            </div>
+        </div>
+        <label class="ad-labels-custom">Description</label>
+        {{ form.description }}
+
+        {% csrf_token %}
+        {#        <button class="ad-create-button">Create Ad</button>#}
+        <button class="create-ad-btn">
+            <i class="fa-solid fa-upload"></i>
+            Create
+        </button>
+
+    </form>
+    </body>
+{% endblock %}
+</html>

@@ -1,0 +1,95 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block page_content %}
+    <div class="custom-space">
+        <div class="profile-nav delete">
+            <img src="{{ object.image.url }}" alt="" class="profile-image">
+            <p class="profile-text delete">Hi, {{ object.first_name }}</p>
+            <a href="{% url 'edit profile' %}" class="profile-nav-buttons white-hover delete">
+                <i class="fa-solid fa-user-pen delete"></i>
+                Edit profile
+            </a>
+            <a href="{% url 'Change password' %}" class="profile-nav-buttons white-hover delete">
+                <i class="fa-solid fa-lock delete"></i>
+                Change password
+            </a>
+            <a href="{% url 'send delete code' object.pk %}" class="profile-nav-buttons-last white-hover">
+                <i class="fa-solid fa-eraser"></i>
+                Re-send code
+            </a>
+            {% if messages %}
+                <div class="error-message">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+
+            {% endif %}
+        </div>
+
+        <form class="profile-details-div delete" method="post" action="{% url 'Delete user' %}">
+            <div class="profile-edit-form">
+                <label>First Name:</label>
+                <p>{{ object.first_name }}</p>
+            </div>
+
+            <div class="profile-edit-form">
+                <label>Last Name:</label>
+                <p>{{ object.last_name }}</p>
+            </div>
+
+            <div class="profile-edit-form">
+                <label>Age:</label>
+                <p>{{ object.age }}</p>
+            </div>
+
+            <div class="profile-edit-form">
+                <label>Phone Number:</label>
+                <p>{{ object.phone_number }}</p>
+            </div>
+            <div class="profile-edit-form">
+                <label>Confirmation code:</label>
+                <p>{{ form.confirm_delete_code }}</p>
+            </div>
+            <div class="profile-details-context-last profile-edit-context-last-btn">
+                <button class="profile-delete-button" type="submit">
+                    <i class="fa-solid fa-eraser"></i>
+                    Delete
+                </button>
+
+            </div>
+            {% csrf_token %}
+        </form>
+    </div>
+    <h1 class="listing-header delete-header-colour">My Listings</h1>
+    <div class="custom-cards-wrapper-profile profile-delete-cards">
+        {% for ad in ads %}
+            <div class="custom-card-profile">
+                <img src="{{ ad.image_main.url }}"
+                     alt="Avatar" class="profile-ad-image-listing">
+                <div class="container custom-container-background-profile delete height-62">
+                    <div class="item">
+                        <p><b>{{ car.car }} {{ car.model }}</b></p>
+                        <p>Title: {{ ad.title }}</p>
+                        <p>Brand: {{ ad.car }}</p>
+                        <p>Model: {{ ad.model }}</p>
+                        <p>Year: {{ ad.year_of_manufacture }}</p>
+                        <p>City: {{ ad.city }}</p>
+                        <p>Price: {{ ad.price }} $</p>
+                        <a href="{% url 'details ad' ad.pk %}"></a>
+                    </div>
+                    <div class="custom-div">
+                        <a href="{% url 'edit ad' ad.pk %}" class="custom-div-buttons">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            Edit
+                        </a>
+                        <a href="{% url 'delete ad' ad.pk %}" class="custom-div-buttons red-hover">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

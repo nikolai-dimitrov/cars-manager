@@ -1,0 +1,108 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block page_content %}
+    <body>
+    <div class="custom-space">
+        <div class="profile-nav">
+            <img src="{{ object.image.url }}" alt="" class="profile-image">
+            <p class="profile-text">Hi, {{ object.first_name }}</p>
+            <a href="{% url 'edit profile' %}" class="profile-nav-buttons white-hover">
+                <i class="fa-solid fa-user-pen"></i>
+                Edit profile
+            </a>
+            <a href="{% url 'Change password' %}" class="profile-nav-buttons white-hover">
+                <i class="fa-solid fa-lock"></i>
+                Change password
+            </a>
+            {% if not object.user.is_staff %}
+                <a href="{% url 'send delete code' object.pk %}" class="profile-nav-buttons-last white-hover">
+                    <i class="fa-solid fa-eraser"></i>
+                    Get delete code
+                </a>
+            {% else %}
+                <a href="{% url 'admin panel' %}" class="profile-nav-buttons-last white-hover">
+                    <i class="fa-solid fa-gamepad"></i>
+                    Admin Panel
+                </a>
+            {% endif %}
+        </div>
+        <div class="profile-details-div">
+            <div class="profile-details-context">
+                <label>First Name:</label>
+                <p>{{ object.first_name }}</p>
+            </div>
+
+            <div class="profile-details-context">
+                <label>Last Name:</label>
+                <p>{{ object.last_name }}</p>
+            </div>
+
+            <div class="profile-details-context">
+                <label>Age:</label>
+                <p>{{ object.age }}</p>
+            </div>
+
+            <div class="profile-details-context">
+                <label>Phone Number:</label>
+                <p>{{ object.phone_number }}</p>
+            </div>
+            <div class="profile-details-context-last">
+                <label>My Listing:</label>
+                <p>{{ object.ad_set.count }}</p>
+            </div>
+        </div>
+    </div>
+    <h1 class="listing-header">My Listings</h1>
+    <div class="custom-cards-wrapper-profile">
+        {% for ad in page_obj %}
+            <div class="custom-card-profile">
+                <img src="{{ ad.image_main.url }}"
+                     alt="Avatar" class="profile-ad-image-listing">
+                <div class="container custom-container-background-profile height-62 ">
+                    <div class="custom-container-background-profile item">
+                        <p><b>{{ car.car }} {{ car.model }}</b></p>
+                        <p>Title: {{ ad.title }}</p>
+                        <p>Brand: {{ ad.car }}</p>
+                        <p>Model: {{ ad.model }}</p>
+                        <p>Year: {{ ad.year_of_manufacture }}</p>
+                        <p>City: {{ ad.city }}</p>
+                        <p>Price: {{ ad.price }}</p>
+                        <a href="{% url 'details ad' ad.pk %}"></a>
+                    </div>
+                    <div class="custom-div">
+                        <a href="{% url 'edit ad' ad.pk %}" class="custom-div-buttons">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            Edit
+                        </a>
+                        <a href="{% url 'delete ad' ad.pk %}" class="custom-div-buttons red-hover">
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% if page_obj %}
+        <div class="pagination-background">
+            <div>
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}" class="custom-div-buttons pagination-buttons">
+                        <i class="fa-solid fa-backward pagination-arrow"></i>
+                    </a>
+                {% endif %}
+
+                <label class="custom-div-buttons-pagination">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                </label>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="custom-div-buttons">
+                        <i class="fa-solid fa-forward pagination-arrow"></i>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    </body>
+{% endblock %}

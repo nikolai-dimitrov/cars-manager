@@ -1,0 +1,55 @@
+div.custom-nav-background {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 0px 0px 10px 0px;
+    color: #ffffff;
+    background-color: #0d489f;
+    border-bottom: 1.5px solid #a4a4a4;
+    width: 100%;
+    min-width: 800px;
+}
+
+/*div.nav-buttons-wraper {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+a.nav-home-btn {
+    font-size: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-right: 20px;
+    white-space: nowrap;
+
+}
+
+a.nav-sign-out-btn {
+    font-size: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    letter-spacing: 1px;
+    right: 200px;
+    margin-left: 20px;
+    white-space: nowrap;
+}
+
+a.nav-profile-btn {
+    font-size: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    letter-spacing: 1px;
+    right: 200px;
+    /*margin-left: 570px;*/
+    white-space: nowrap;
+
+
+}
+
+i.fa-house {
+    font-size: 17px;
+    text-decoration: none;
+    margin-right: -3px;
+}

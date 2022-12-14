@@ -1,0 +1,114 @@
+.profile-details-wrapper {
+    display: flex;
+}
+
+.profile-description-wrapper {
+    width: 50%;
+}
+
+.profile-details-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: rgb(113, 124, 138, 0.15) 1px solid;
+}
+
+.profile-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 47%;
+    margin: 0 0 0 10px;
+    border-radius: 8px;
+    border: rgba(13, 72, 159, 0.15) 1px solid;
+    box-shadow: -8px 13px 11px -9px rgb(113, 124, 138);
+}
+
+.profile-details-divs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /*color: #ffffff;*/
+}
+
+.image-pack-container {
+    display: flex;
+    height: 50%;
+    margin: 10px 0 0 10px;
+}
+
+.image-div {
+    width: 33%;
+    /*box-shadow: -8px 13px 11px -9px rgba(13, 72, 159, 1);*/
+    box-shadow: -8px 13px 11px -9px rgb(113, 124, 138);
+    border: rgba(13, 72, 159, 0.15) 1px solid;
+    border-radius: 8px;
+    margin-left: 2px;
+}
+
+.image-container {
+    width: 50%;
+    max-height: 450px;
+}
+
+.ad-information-wrapper {
+    display: flex;
+}
+
+.ad-information-container {
+    display: flex;
+    width: 51%;
+    border: rgba(13, 72, 159, 0.15) 1px solid;
+    box-shadow: 8px 13px 11px -9px rgb(113, 124, 138);
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.ad-information-header {
+    width: 100%;
+    border-bottom: rgb(113, 124, 138, 0.15) 1px solid;
+}
+
+.ad-information-inner-container {
+    width: 50%;
+}
+
+.ad-details-div {
+    display: flex;
+    flex-direction: column;
+    /*border-bottom: rgb(113, 124, 138, 0.15) 1px solid;*/
+}
+
+.ad-left-border {
+    border-left: rgb(113, 124, 138, 0.15) 1px solid;
+}
+
+.ad-description {
+    width: 50%;
+    min-height: 240px;
+    border: rgba(13, 72, 159, 0.15) 1px solid;
+    box-shadow: -8px 13px 11px -9px rgb(113, 124, 138);
+    border-radius: 8px;
+    margin: 10px 0 0 10px;
+}
+
+.ad-description-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 0 10px;
+    /*font-weight: lighter;*/
+    font-style: italic;
+}
+
+.non-image {
+    width: 100%;
+    height: 100%;
+    font-size: xxx-large;
+}
+
+.delete-container-background {
+    /*background-color: #79090f;*/
+    background-color: #79090f;
+}

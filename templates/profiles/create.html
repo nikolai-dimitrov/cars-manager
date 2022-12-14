@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% block page_content %}
+    <body class="login-body">
+    <form method="post" action="{% url 'create profile' %}" class="f-heigh">
+        <div>
+            <label class="create-profile-label">Last Name:</label>
+            {{ form.first_name }}
+        </div>
+        <div class="">
+            <label class="create-profile-label">First Name:</label>
+            {{ form.last_name }}
+        </div>
+        <label class="create-profile-label">Age:</label>
+        <div class="">
+            {{ form.age }}
+        </div>
+        <label class="create-profile-label">Phone Number:</label>
+        <div class="">
+            {{ form.phone_number }}
+        </div>
+        {% csrf_token %}
+        <button type="submit" class="btn-my-class-blue-complete create-profile-btn">Complete</button>
+    </form>
+    {% if form.errors %}
+        <div class="error-message create-profile-errors">
+            {% for error in form.errors.values %}
+                {{ error }}
+            {% endfor %}
+        </div>
+    {% endif %}
+    </body>
+{% endblock %}

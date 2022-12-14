@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block page_content %}
+    {% include 'main/bootstrap-partial.html' %}
+    <body class="login-body">
+    <div class="about-us-div">
+        <a href="https://github.com/nikolai-dimitrov" class="git-a-link">
+            <i class="fa-brands fa-github"></i>
+            Git
+        </a>
+        <h4 class="custom-h">My SoftUni Final Project</h4>
+        <h4 class="custom-h">Open Cars Manager</h4>
+        {% if not request.user.is_authenticated %}
+            <div class="about-us-div-wrapper">
+                <a href="{% url 'Log in' %}" class="about-us-buttons">
+                    <i class="fa-solid fa-key"></i>
+                    Sign in
+                </a>
+                <a href="{% url 'Register' %}" class="about-us-buttons">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Sign up
+                </a>
+            </div>
+        {% endif %}
+    </div>
+    <div>
+    </div>
+    </body>
+{% endblock %}

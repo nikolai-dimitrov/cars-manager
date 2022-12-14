@@ -1,0 +1,45 @@
+{% load socialaccount %}
+{% load static %}
+{% include 'main/bootstrap-partial.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sing In</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body class="login-body">
+</body>
+<div class="oauth-forms">
+    <a href="{% url 'about' %}" class="heading-about">
+        <i class="fa fa-book" aria-hidden="true"></i>
+        About
+    </a>
+    <a href="{% url 'Log in' %}" class="heading-back">
+        <i class="fa fa-backward" aria-hidden="true"></i>
+        Back
+    </a>
+    <form method='post' action='{% url 'Register' %}'>
+
+        <div class="data-input">
+            {{ form.username }}
+        </div>
+        <div class="data-input">
+            {{ form.email }}
+        </div>
+        <div class="data-input">
+            {{ form.password1 }}
+        </div>
+        <div class="data-input">
+            {{ form.password2 }}
+        </div>
+        {% for error in form.errors.values %}
+            {{ error }}
+        {% endfor %}
+        {% csrf_token %}
+        <button type="submit" class="btn-my-class-blue-medium"
+        >Sign Up
+        </button>
+    </form>
+</div>
+</html>

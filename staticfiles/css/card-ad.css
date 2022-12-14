@@ -1,0 +1,90 @@
+.custom-space {
+    display: flex;
+    margin: 20px;
+}
+
+.custom-card {
+    display: flex;
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    width: 90%;
+    height: 40vh;
+    margin: 0 auto 5px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    max-height: 250px;
+}
+
+.custom-cards-wrapper {
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.custom-container-background {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #0d489f;
+    color: #ffffff;
+
+}
+
+.custom-container-background:hover {
+    background: linear-gradient(
+            151deg,
+            rgba(2, 0, 36, 1) 0%,
+            rgba(9, 9, 121, 1) 30%,
+            rgba(0, 212, 255, 1) 100%
+    );
+    color: #ffffff;
+}
+
+.fa-star-custom {
+    margin: 10px;
+}
+
+.custom-cards-wrapper-center {
+    display: flex;
+}
+
+.item {
+    position: relative;
+}
+
+.item a::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.bookmark-background {
+    background-color: #0d489f;
+}
+
+.star-colour-white {
+    color: #ffffff;
+}
+
+.ad-image {
+    max-width: 50%;
+    width: 50%;
+}
+
+div.images-wrapper > div {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.images-wrapper {
+    width: 70%;
+    margin: 10px auto;
+}

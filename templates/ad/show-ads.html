@@ -1,0 +1,80 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load cloudinary %}
+{% block page_content %}
+    <body onload="setRequired()">
+    <div class="custom-space">
+        <form method="post" action="{% url 'show ads' %}" class="ad-search-form">
+            <h1 class="ad-heading-color">Search ads</h1>
+            <label class="ad-labels-custom">Title</label>
+            {{ form.title }}
+            <label class="ad-labels-custom">Price</label>
+            {{ form.price }}
+            <label class="ad-labels-custom">Year of manufacture</label>
+            {{ form.year_of_manufacture }}
+            <label class="ad-labels-custom">Car brand</label>
+            {{ form.car }}
+            <label class="ad-labels-custom">Car model</label>
+            {{ form.model }}
+            <label class="ad-labels-custom">Transmission</label>
+            {{ form.transmission }}
+            <label class="ad-labels-custom">Body type</label>
+            {{ form.body_type }}
+            <label class="ad-labels-custom">City</label>
+            {{ form.city }}
+            <label class="ad-labels-custom">Fuel</label>
+            {{ form.fuel }}
+            {% csrf_token %}
+            <button type="submit" class="search-form-btn">
+                Search
+                <i class="fa-solid fa-magnifying-glass small"></i>
+            </button>
+
+        </form>
+
+        <div class="custom-cards-wrapper">
+            {% for ad in page_obj %}
+                {% if not ad.profile.is_banned %}
+                    <div class="custom-card">
+                        <a href="{% url 'bookmark ad' %}?ad_pk={{ ad.pk }}" class="bookmark-background">
+                            <i class="fa-solid fa-star fa-star-custom star-colour-white"></i>
+                        </a>
+                        <img src="{{ ad.image_main.url }}"
+                             alt="Avatar" style="width:46%;min-width: 46%;max-width: 46%">
+                        <div class="container custom-container-background item">
+                            <p>Title: {{ ad.title }}</p>
+                            <p>Brand: {{ ad.car }}</p>
+                            <p>Model: {{ ad.model }}</p>
+                            <p>Year: {{ ad.year_of_manufacture }}</p>
+                            <p>City: {{ ad.city }}</p>
+                            <p>Price: {{ ad.price }}</p>
+                            <a href="{% url 'details ad' ad.pk %}"></a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {% if page_obj %}
+                <div class="pagination-background">
+                    <div>
+                        {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}"
+                               class="custom-div-buttons pagination-buttons">
+                                <i class="fa-solid fa-backward pagination-arrow"></i>
+                            </a>
+                        {% endif %}
+
+                        <label class="custom-div-buttons">Page {{ page_obj.number }}
+                            of {{ page_obj.paginator.num_pages }}</label>
+
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}" class="custom-div-buttons">
+                                <i class="fa-solid fa-forward pagination-arrow"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    </body>
+{% endblock %}

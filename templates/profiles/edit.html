@@ -1,0 +1,78 @@
+{% extends 'main/base.html' %}
+{% load cloudinary %}
+{% block page_content %}
+    <body>
+    <div class="custom-space">
+        <div class="profile-nav">
+            <img src="{{ object.image.url }}" alt="" class="profile-image test" onclick="imageOnClickProfile(event)"
+                 id="profile-image">
+            <p class=" profile-text">Hi, {{ object.first_name }}</p>
+            <a href="{% url 'edit profile' %}" class="profile-nav-buttons white-hover">
+                <i class="fa-solid fa-user-pen"></i>
+                Edit profile
+            </a>
+            <a href="{% url 'Change password' %}" class="profile-nav-buttons white-hover">
+                <i class="fa-solid fa-lock"></i>
+                Change password
+            </a>
+            {% if not object.user.is_staff %}
+                <a href="{% url 'send delete code' object.pk %}" class="profile-nav-buttons-last white-hover">
+                    <i class="fa-solid fa-eraser"></i>
+                    Get delete code
+                </a>
+            {% else %}
+                <a href="{% url 'admin panel' %}" class="profile-nav-buttons-last white-hover">
+                    <i class="fa-solid fa-gamepad"></i>
+                    Admin Panel
+                </a>
+            {% endif %}
+            {% if form.errors %}
+                <div class="error-message">
+                    {% for error in form.errors.values %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <form class="profile-details-div " method="post" action="{% url 'edit profile' %}"
+              enctype="multipart/form-data">
+            <div class="profile-edit-form">
+                <label class="profile-delete-div">First Name:</label>
+                <p>{{ form.first_name }}</p>
+            </div>
+
+            <div class="profile-edit-form">
+                <label>Last Name:</label>
+                <p>{{ form.last_name }}</p>
+            </div>
+
+            <div class="profile-edit-form">
+                <label>Age:</label>
+                <p>{{ form.age }}</p>
+            </div>
+
+            <div class="profile-edit-form">
+                <label>Phone Number:</label>
+                <p>{{ form.phone_number }}</p>
+            </div>
+            <div hidden="hidden">{{ form.image }}</div>
+
+            <div class="profile-details-context-last profile-edit-context-last-btn">
+                <button class="profile-edit-button">
+                    <i class="fa-solid fa-user-pen"></i>
+                    Edit
+                </button>
+
+            </div>
+            {% csrf_token %}
+        </form>
+    </div>
+    {#    {% if form.errors %}#}
+    {#        <div class="error-message">#}
+    {#            {% for error in form.errors.values %}#}
+    {#                {{ error }}#}
+    {#            {% endfor %}#}
+    {#        </div>#}
+    {#    {% endif %}#}
+    </body>
+{% endblock %}

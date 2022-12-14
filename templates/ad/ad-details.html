@@ -1,0 +1,105 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block page_content %}
+    <body>
+    <div class="profile-details-wrapper">
+        <div class="image-container">
+            <img src="{{ object.image_main.url }}"
+                 alt="Avatar" style="width:100%;max-height: 450px">
+        </div>
+        <div class="profile-description-wrapper">
+            <div class="profile-details-container">
+                <h4 class="profile-details-header">Information about seller:</h4>
+                <div class="profile-details-divs">
+                    <label>First Name:</label>
+                    {{ ad.profile.first_name }}
+                </div>
+                <div class="profile-details-divs">
+                    <label>Last Name:</label>
+                    {{ ad.profile.last_name }}
+                </div>
+                <div class="profile-details-divs">
+                    <label>Age:</label>
+                    {{ ad.profile.age }}
+                </div>
+                <div class="profile-details-divs">
+                    <label>Phone Number:</label>
+                    {{ ad.profile.phone_number }}
+                </div>
+                <div class="profile-details-divs">
+                    <label>Seller rating:</label>
+                    0 todo
+                </div>
+            </div>
+            <div class="image-pack-container">
+                    <img src="{{ object.image1.url }}" alt="Avatar" class="image-div">
+                    <img src="{{ object.image2.url }}" alt="Avatar" class="image-div">
+                    <img src="{{ object.image3.url }}" alt="Avatar" class="image-div">
+            </div>
+        </div>
+    </div>
+    <div class="ad-information-wrapper">
+        <div class="ad-information-container">
+            <div class="ad-information-inner-container">
+                <div class="ad-information-header">
+                    <h4>Information:</h4>
+                </div>
+                <div class="ad-details-div">
+                    Brand:
+                    <i class="fa-solid fa-car"> {{ ad.car }}</i>
+                </div>
+                <div class="ad-details-div">
+                    Model:
+                    <i class="fa-solid fa-car"> {{ ad.model }}</i>
+                </div>
+                <div class="ad-details-div">
+                    Price:
+                    <i class="fa-solid fa-dollar-sign"> {{ ad.price }}</i>
+                </div>
+                <div class="ad-details-div">
+                    City:
+                    <i class="fa-solid fa-city"> {{ ad.city }}</i>
+                </div>
+                <div class="ad-details-div">
+                    Body Type:
+                    <i class="fa-solid fa-car-side"> {{ ad.body_type }}</i>
+                </div>
+            </div>
+            <div class="ad-information-inner-container">
+                <div class="ad-information-header">
+                    <h4>Characteristics:</h4>
+                </div>
+                <div class="ad-details-div">
+                    Horsepower:
+                    <i class="fa-solid fa-horse-head"> {{ ad.horse_power }}</i>
+                </div>
+                <div class="ad-details-div">
+                    Transmission:
+                    <i class="fa-solid fa-gear"> {{ ad.transmission }}</i>
+                </div>
+                <div class="ad-details-div">
+                    Year:
+                    <i class="fa-solid fa-calendar-days"> {{ ad.year_of_manufacture }}</i>
+                </div>
+
+                <div class="ad-details-div">
+                    Fuel:
+                    <i class="fa-solid fa-gas-pump"> {{ ad.fuel }}</i>
+                </div>
+                <div class="ad-details-div">
+                    Mileage:
+                    <i class="fa-solid fa-gauge-high"> {{ ad.mileage }}</i>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="ad-description">
+            <h4 class="profile-details-header">Car Description:</h4>
+            <div class="ad-description-inner">
+                {{ ad.description }}
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

@@ -1,0 +1,118 @@
+/*body.login-body {*/
+/*    background-image: url('../image/red-sport-car-front-side-view-black-wheel-with-metallic-silver-color_114579-1160.jpeg');*/
+/*}*/
+
+body.login-body {
+    background: url('../image/red-sport-car-front-side-view-black-wheel-with-metallic-silver-color_114579-1160.jpeg') no-repeat center fixed;
+}
+
+i.fa-backward {
+    margin-left: 121px;
+}
+
+a.heading-about {
+    font-size: 25px;
+    text-decoration: none;
+    color: #0d489f;
+
+}
+
+a.heading-back {
+    font-size: 25px;
+    text-decoration: none;
+    color: #0d489f;
+
+}
+
+/*style="width: 305px; margin-top: 10px;"*/
+div.data-input {
+    width: 305px;
+    margin-top: 10px;
+    letter-spacing: 25px;
+}
+
+div.oauth-forms {
+    margin-top: 150px;
+    margin-left: 120px;
+}
+
+button.btn-primary {
+    --bs-btn-color: #ffffff;
+    --bs-btn-bg: #0d489f;
+}
+
+/*a down with out text decoration -> ____ on text*/
+a.a-my-class-blue-normal {
+    background-color: #0d489f;
+    color: #ffffff;
+    padding: 11px 49px;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/*a maked to a button */
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    text-decoration: none;
+    background-color: #0d489f;
+    color: #ffffff;
+    padding: 9px 50px;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+
+button.btn-my-class-blue-normal {
+    background-color: #0d489f;
+    color: #ffffff;
+    padding: 7px 48px;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1.5px solid #0d489f;
+    /*border: none;*/
+}
+
+button.btn-my-class-blue-medium {
+    background-color: #0d489f;
+    color: #ffffff;
+    padding: 7px 125px;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+button.btn-my-class-blue-complete {
+    background-color: #0d489f;
+    color: #ffffff;
+    padding: 7px 117px;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.error-message {
+    margin: 10px 0 0 0;
+    padding: 5px;
+    /*border: 2px solid rgba(121, 9, 15, 1);*/
+    box-shadow: 0 4px 10px -4px rgba(121, 9, 15, 1);
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 305px;
+}
+
+.errorlist {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}

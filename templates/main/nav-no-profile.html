@@ -1,0 +1,31 @@
+{% load static %}
+{% include 'main/bootstrap-partial.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+</head>
+<div class="custom-nav-background">
+    <div class="">
+        <a href="{% url 'index' %}" class="nav-home-btn">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+        <a href="{% url 'about' %}" class="nav-home-btn">
+            <i class="fa fa-book"></i>
+            About Us
+        </a>
+    </div>
+    <div class="">
+        <a href="{% url 'create profile' %}" class="nav-profile-btn">
+            <i class="fa-solid fa-user"></i>
+            Create Profile
+        </a>
+        <a href="{% url 'Log out' %}" class="nav-sign-out-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sing Out
+        </a>
+    </div>
+</div>

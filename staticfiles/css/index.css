@@ -1,7 +1,12 @@
-@media only screen and (min-device-width: 300px) and (max-device-width: 800px) {
+@media only screen and (min-device-width: 300px) and (max-device-width: 700px) {
+    .index-body-background {
+        /*height: 100vh;*/
+    }
+
     .car-search-form {
-        flex-wrap: wrap;
-        flex-direction: column;
+        flex-wrap: wrap !important;
+        flex-direction: column !important;
+        font-size: 40px !important;
     }
 
     .car-search-form-field, .search-button-home {
@@ -11,6 +16,23 @@
 
     .car-wrapper {
         width: 45% !important;
+    }
+
+    .results {
+        height: 50%!important;
+        font-size: 30px!important;
+    }
+
+    .car-search-form {
+        height: 30%!important;
+    }
+
+    .car-search-form-field {
+        height: 10%!important;
+    }
+
+    .search-button-home {
+        height: 10%!important;
     }
 }
 

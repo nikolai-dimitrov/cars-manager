@@ -27,10 +27,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')  # '127.0.0.1',
-
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
+CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS").split()
 # Application definition
-
 INSTALLED_APPS = [
     'rest_framework',
     'django.contrib.admin',
@@ -65,7 +64,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'cars.core.middlewares.ActiveUserMiddleware',
 ]
-
 
 ROOT_URLCONF = 'cars.urls'
 
@@ -136,6 +134,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'staticfiles']
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR / 'media/')
 MEDIA_URL = 'media/'

@@ -4,7 +4,9 @@
 {% block page_content %}
 
     {% if not request.user.profile.is_activated %}
-        <div>Please create profile</div>
+        <div class="create-profile-invite-message">
+            <div class="inner-invite-message">Please create profile</div>
+        </div>
     {% endif %}
     <body class="index-body-background">
     <div class="heading-wrapper">
@@ -18,7 +20,7 @@
         {{ form.transmission }}
         {{ form.fuel_type }}
         {{ form.cylinders }}
-            <button class="search-button-home">Search</button>
+        <button class="search-button-home">Search</button>
         {% csrf_token %}
     </form>
 

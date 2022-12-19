@@ -5,7 +5,7 @@
     <div class="custom-space">
         <div class="profile-nav">
             <img src="{{ object.image.url }}" alt="" class="profile-image">
-            <p class="profile-text">Hi, {{ object.first_name }}</p>
+            <p class="profile-text mobile-device-l">Hi, {{ object.first_name }}</p>
             <a href="{% url 'edit profile' %}" class="profile-nav-buttons white-hover">
                 <i class="fa-solid fa-user-pen"></i>
                 Edit profile
@@ -28,27 +28,27 @@
         </div>
         <div class="profile-details-div">
             <div class="profile-details-context">
-                <label>First Name:</label>
-                <p>{{ object.first_name }}</p>
+                <label class="mobile-device-l">First Name:</label>
+                <p class="mobile-device-p">{{ object.first_name }}</p>
             </div>
 
             <div class="profile-details-context">
-                <label>Last Name:</label>
-                <p>{{ object.last_name }}</p>
+                <label class="mobile-device-l">Last Name:</label>
+                <p class="mobile-device-p">{{ object.last_name }}</p>
             </div>
 
             <div class="profile-details-context">
-                <label>Age:</label>
-                <p>{{ object.age }}</p>
+                <label class="mobile-device-l">Age:</label>
+                <p class="mobile-device-p">{{ object.age }}</p>
             </div>
 
             <div class="profile-details-context">
-                <label>Phone Number:</label>
-                <p>{{ object.phone_number }}</p>
+                <label class="mobile-device-l">Phone Number:</label>
+                <p class="mobile-device-p">{{ object.phone_number }}</p>
             </div>
             <div class="profile-details-context-last">
-                <label>My Listing:</label>
-                <p>{{ object.ad_set.count }}</p>
+                <label class="mobile-device-l">My Listing:</label>
+                <p class="mobile-device-p">{{ object.ad_set.count }}</p>
             </div>
         </div>
     </div>

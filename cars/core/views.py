@@ -38,8 +38,8 @@ class IndexView(ListView, FormView, CarApiMixin):
         if self.request.session.get("page") is not None:
             return self.kwargs.get("cars") or self.request.session.get('cars') or []
 
-        if self.request.GET.get("page") is not None:
-            return self.kwargs.get("cars") or self.request.session.get('cars') or []
+        # if self.request.GET.get("page") is not None:
+        #     return self.kwargs.get("cars") or self.request.session.get('cars') or []
         else:
             self.request.session["page"] = None
             self.request.session['cars'] = None

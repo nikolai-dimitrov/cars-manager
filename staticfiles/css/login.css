@@ -1,9 +1,46 @@
-/*body.login-body {*/
-/*    background-image: url('../image/red-sport-car-front-side-view-black-wheel-with-metallic-silver-color_114579-1160.jpeg');*/
-/*}*/
+@media only screen and (min-device-width: 300px) and (max-device-width: 700px) {
+    .heading-register,
+    .heading-about {
+        font-size: 45px !important;
+    }
+
+    .data-input {
+        width: 370px !important;
+    }
+    .btn-my-class-blue-normal {
+        width: 180px !important;
+    }
+    .button {
+        width: 221px !important;
+        font-size: 35px!important;
+    }
+    .google-sing-login {
+        width: 370px !important;
+    }
+    .form-control {
+        height: 70px!important;
+        width: 445px!important;
+    }
+    .heading-back {
+        font-size: 45px!important;
+    }
+    .btn-my-class-blue-medium {
+        font-size: 45px!important;
+        width: 445px!important;
+    }
+    .btn-my-class-blue-normal {
+        width: 221px!important;
+        font-size: 35px!important;
+    }
+    .btn-primary {
+        width: 445px!important;
+        font-size: 30px;
+    }
+}
 
 body.login-body {
     background: url('../image/red-sport-car-front-side-view-black-wheel-with-metallic-silver-color_114579-1160.jpeg') no-repeat center fixed;
+
 }
 
 i.fa-backward {
@@ -24,7 +61,6 @@ a.heading-back {
 
 }
 
-/*style="width: 305px; margin-top: 10px;"*/
 div.data-input {
     width: 305px;
     margin-top: 10px;
@@ -115,4 +151,8 @@ button.btn-my-class-blue-complete {
     padding: 0;
     margin: 0;
     list-style: none;
+}
+
+.google-sing-login {
+    --bs-btn-padding-y: 0.5rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 0.9rem;
 }

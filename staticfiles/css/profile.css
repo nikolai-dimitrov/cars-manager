@@ -4,6 +4,20 @@
         flex-direction: column;
     }
 
+    .profile-nav {
+        width: 100% !important;
+        margin-left: 20px !important;
+        margin-bottom: 50px;
+        height: 700px !important;
+        justify-content: space-between;
+    }
+
+    .custom-card-profile {
+        min-width: 200px !important;
+        min-height: 500px;
+        max-width: none !important;
+    }
+
     .car-search-form-field, .search-button-home {
         width: 85% !important;
         margin: 5px auto !important;
@@ -11,6 +25,93 @@
 
     .car-wrapper {
         width: 45% !important;
+    }
+
+    .profile-nav-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        font-size: 50px;
+    }
+
+    .profile-nav-buttons-last {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 50px;
+    }
+
+    .custom-cards-wrapper-profile {
+        max-height: none !important;
+        height: 40vh;
+    }
+
+    .profile-ban-button {
+        height: 50px;
+    }
+
+    .profile-details-context {
+        height: 100px !important;
+    }
+
+    .profile-image {
+        max-width: 150px;
+        min-width: 150px !important;
+        max-height: 150px !important;;
+        min-height: 150px !important;;
+        border-radius: 200px !important;;
+    }
+
+    .profile-details-div {
+        height: 500px !important;
+    }
+
+    .mobile-device-l {
+        font-size: 50px;
+    }
+
+    .mobile-device-p {
+        font-size: 50px;
+    }
+
+    .custom-container-background-profile {
+        font-size: 25px !important;
+    }
+
+    .profile-edit-form {
+        height: 100px !important;
+        font-size: 50px !important;
+    }
+
+    .profile-edit-context-last-btn {
+        font-size: 50px !important;
+    }
+
+    .error-message {
+        background-color: white !important;
+        font-size: 20px !important;
+    }
+
+    .heading-style {
+        font-size: 40px !important;
+    }
+
+    .inner-invite-message {
+        font-size: 35px !important;
+    }
+
+    .f-heigh {
+        width: 450px !important;
+        font-size: 35px !important;
+    }
+
+    .btn-my-class-blue-complete {
+        font-size: 30px !important;
+    }
+
+    .btn-my-class-blue-change-pass {
+        width: 445px!important;
+        font-size: 30px!important;
     }
 }
 
@@ -340,4 +441,26 @@ input[type=number] {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.mobile-device-l {
+
+}
+
+.mobile-device-p {
+
+}
+
+.create-profile-invite-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner-invite-message {
+    box-shadow: 0 0 4px -1px rgb(73 62 6);
+    /*border: 1px solid;*/
+    padding: 0 10px 0 10px;
+    border-radius: 8px;
+    font-size: 20px;
 }

@@ -71,7 +71,8 @@ class ShowAdsView(FormView, Paginator):
 
         }
         return self.render_to_response(context)
-
+    def render_to_response(self, context, **response_kwargs):
+        return super().render_to_response()
     def get_context_data(self, **kwargs):
         filters = self.request.session.get('last_filters') or '{}'
         filters = json.loads(filters)

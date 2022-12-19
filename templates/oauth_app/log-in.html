@@ -2,7 +2,7 @@
 {% load static %}
 {% include 'main/bootstrap-partial.html' %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="custom-h-custom">
 <head>
     <meta charset="UTF-8">
     <title>Sing In</title>
@@ -31,8 +31,7 @@
 <form class="auth-form" action="{% provider_login_url 'google' %}" method="post"
       style="margin-top: 7px;margin-left: 120px">
     {% csrf_token %}
-    <button type="submit" class="btn btn-primary auth google"
-            style="--bs-btn-padding-y: 0.5rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 0.9rem;">
+    <button type="submit" class="btn btn-primary auth google google-sing-login">
         <i class="fa-brands fa-google"></i> Sign in with Google
     </button>
     {% if messages %}
@@ -49,7 +48,8 @@
             {% endfor %}
         </div>
     {% endif %}
-    </div>
+
 </form>
+
 </body>
 </html>

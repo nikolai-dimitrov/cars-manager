@@ -1,3 +1,21 @@
+@media only screen and (min-device-width: 300px) and (max-device-width: 800px) {
+    .custom-nav-background {
+        font-size: 30px!important;
+    }
+    .nav-home-btn {
+        font-size: 22px!important;
+    }
+    .nav-profile-btn {
+        font-size: 22px!important;
+    }
+    .nav-sign-out-btn {
+        font-size: 22px!important;
+    }
+    .delete-header-colour {
+        margin-top: 100px;
+    }
+}
+
 div.custom-nav-background {
     display: flex;
     justify-content: space-between;

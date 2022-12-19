@@ -1,5 +1,6 @@
 const carModelsPath = '/vehicle/api';
 const host = 'http://127.0.0.1:8000';
+// const host = 'https://cars-manager.tk';
 const options = [];
 
 async function setModel() {

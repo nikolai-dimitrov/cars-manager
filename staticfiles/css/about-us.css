@@ -1,3 +1,22 @@
+@media only screen and (min-device-width: 300px) and (max-device-width: 700px) {
+    .git-a-link {
+        justify-content: center !important;
+        flex-direction: row !important;
+        margin-left: 0px !important;
+        font-size: 50px !important;
+    }
+
+    .about-us-div {
+        width: 60% !important;
+        font-size: 40px !important;
+        height: 340px !important;
+    }
+
+    .custom-h {
+        font-size: 50px !important;
+    }
+}
+
 .about-us-div {
     width: 30%;
     height: 300px;
@@ -6,6 +25,7 @@
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, 0.25);
     box-shadow: 0px 7px 12px -8px rgba(0, 0, 0, 1);
+    min-width: 440px;
 }
 
 .git-a-link {
@@ -20,6 +40,7 @@
 
 
 }
+
 .custom-h {
     display: flex;
     justify-content: center;
@@ -32,6 +53,7 @@
     justify-content: space-evenly;
     margin: 50px auto;
 }
+
 .about-us-buttons {
     color: #ffffff;
     text-decoration: none;

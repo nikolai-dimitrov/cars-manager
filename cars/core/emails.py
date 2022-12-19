@@ -32,7 +32,7 @@ def activate_email(request, user, to_email):
     message = render_to_string('oauth_app/activate_account.html', {
         'user': user.username,
         'domain': get_current_site(request).domain,
-        'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+        'uid': urlsafe_base64_encode(force_bytes(user.pk)), #encode user pk to something like secret key and send to email
         'token': account_activation_token.make_token(user),
         'protocol': 'https' if request.is_secure() else 'http'
 
